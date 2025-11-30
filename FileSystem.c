@@ -49,14 +49,6 @@ int main(void) {
     char content[512];
     int choice;
     
-    printf("Enter filename: ");
-    fgets(filename, sizeof(filename), stdin);
-    
-    size_t len = strlen(filename);
-    if (len > 0 && filename[len - 1] == '\n') {
-        filename[len - 1] = '\0';
-    }
-    
     while (1) {
         printf("\n--- File Operations Menu ---\n");
         printf("1. Create file\n");
@@ -69,14 +61,32 @@ int main(void) {
         
         switch (choice) {
             case 1:
+                printf("Enter filename to create: ");
+                fgets(filename, sizeof(filename), stdin);
+                size_t len = strlen(filename);
+                if (len > 0 && filename[len - 1] == '\n') {
+                    filename[len - 1] = '\0';
+                }
                 createFile(filename);
                 break;
             case 2:
+                printf("Enter filename to write to: ");
+                fgets(filename, sizeof(filename), stdin);
+                len = strlen(filename);
+                if (len > 0 && filename[len - 1] == '\n') {
+                    filename[len - 1] = '\0';
+                }
                 printf("Enter content to write: ");
                 fgets(content, sizeof(content), stdin);
                 writeToFile(filename, content);
                 break;
             case 3:
+                printf("Enter filename to read: ");
+                fgets(filename, sizeof(filename), stdin);
+                len = strlen(filename);
+                if (len > 0 && filename[len - 1] == '\n') {
+                    filename[len - 1] = '\0';
+                }
                 readFromFile(filename);
                 break;
             case 4:
