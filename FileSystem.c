@@ -32,7 +32,11 @@ void readFromFile(char* filename) {
         printf("Error opening file for reading!\n");
         return;
     }
+<<<<<<< HEAD
     int ch; 
+=======
+    int ch; /* must be int to hold EOF */
+>>>>>>> 2646e1f2ce662e48ee394680f82883ed313fb3a1
     printf("Contents of %s:\n", filename);
     while ((ch = fgetc(fp)) != EOF) {
         putchar(ch);
@@ -44,11 +48,27 @@ void readFromFile(char* filename) {
     fclose(fp);
 }
 
+<<<<<<< HEAD
+=======
+// Simple test runner so the file can be compiled into an executable
+>>>>>>> 2646e1f2ce662e48ee394680f82883ed313fb3a1
 int main(void) {
     char filename[256];
     char content[512];
     int choice;
     
+<<<<<<< HEAD
+=======
+    printf("Enter filename: ");
+    fgets(filename, sizeof(filename), stdin);
+    
+    // Remove trailing newline from fgets
+    size_t len = strlen(filename);
+    if (len > 0 && filename[len - 1] == '\n') {
+        filename[len - 1] = '\0';
+    }
+    
+>>>>>>> 2646e1f2ce662e48ee394680f82883ed313fb3a1
     while (1) {
         printf("\n--- File Operations Menu ---\n");
         printf("1. Create file\n");
@@ -57,6 +77,7 @@ int main(void) {
         printf("4. Exit\n");
         printf("Choose an option (1-4): ");
         scanf("%d", &choice);
+<<<<<<< HEAD
         getchar(); 
         
         switch (choice) {
@@ -76,17 +97,29 @@ int main(void) {
                 if (len > 0 && filename[len - 1] == '\n') {
                     filename[len - 1] = '\0';
                 }
+=======
+        getchar(); // consume newline from scanf
+        
+        switch (choice) {
+            case 1:
+                createFile(filename);
+                break;
+            case 2:
+>>>>>>> 2646e1f2ce662e48ee394680f82883ed313fb3a1
                 printf("Enter content to write: ");
                 fgets(content, sizeof(content), stdin);
                 writeToFile(filename, content);
                 break;
             case 3:
+<<<<<<< HEAD
                 printf("Enter filename to read: ");
                 fgets(filename, sizeof(filename), stdin);
                 len = strlen(filename);
                 if (len > 0 && filename[len - 1] == '\n') {
                     filename[len - 1] = '\0';
                 }
+=======
+>>>>>>> 2646e1f2ce662e48ee394680f82883ed313fb3a1
                 readFromFile(filename);
                 break;
             case 4:
