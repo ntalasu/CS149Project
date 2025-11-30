@@ -1,0 +1,5 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/talasu/projects/CS149Project/CS149Project/output/FileSystem'
+relocations:     []
+...
