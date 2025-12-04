@@ -89,7 +89,7 @@ int main(void) {
         printf("2. Write to file\n");
         printf("3. Read from file\n");
         printf("4. Search file\n");
-        printf("5. Open file (keep open)\n");
+        printf("5. Open file \n");
         printf("6. Close open file\n");
         printf("7. Exit\n");
         printf("Choose an option (1-7): ");
@@ -99,7 +99,7 @@ int main(void) {
             while (getchar() != '\n'); // clear wrong input
             continue;
         }
-        getchar(); // remove newline
+        getchar(); 
 
         switch (choice) {
 
@@ -125,7 +125,7 @@ int main(void) {
                 searchFile(filename);
                 break;
 
-            case 5: // Open file (persistent)
+            case 5: // Open file 
                 if (openFile != NULL) {
                     printf("A file is already open. Close it first.\n");
                     break;
@@ -155,3 +155,4 @@ int main(void) {
         }
     }
 }
+
